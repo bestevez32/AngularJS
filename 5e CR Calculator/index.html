@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en"
+  ng-app="cr_calculator">
+<head>
+  <title>5e CR Calculator</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="jumbotron text-center">
+  <h1>DnD 5e Challenge Rating Calculator</h1>
+  <p>Calculate the CR pick some monsters to battle and enjoy the mayhem that ensues!</p> 
+</div>
+  
+<div class="container">
+  <div class="row">
+    <div class="col-sm-9">
+      <h3>The Calculator</h3>
+      <p id="results"></p>
+      <div class="table-responsive">
+      <table class="table table-bordered">
+          <thead>
+              <tr>
+                  <th>Number of PC's</th>
+                  <th>Difficulty</th>
+                  <th>Average Level</th>
+                  <th>Result</th>
+                  <th>Calculate Encounter</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td class="col-sm-1"><input class="form-control" id="number_of_players" type="text" oninput="encounter_calculator()"/></td>
+                  <td class="col-sm-1">
+                      <select id="encounter_difficulty_selector" class="form-control" onchange="encounter_calculator()">
+                          <option id="box2" value="25">Easy</option>
+                          <option id="box2" value="50">Medium</option>
+                          <option id="box2" value="75">Hard</option>
+                          <option id="box2" value="100">Deadly</option>
+                      </select>
+                  </td>
+                  <td class="col-sm-1"><input class="form-control" id="average_player_level" type="text" oninput="encounter_calculator()"/></td>
+                  <td class="col-sm-1"><input class="form-control" id="result" /></td>
+                  <td class="col-sm-1"><button class="form-control" onclick="showRandom();">Calculate</button></td>
+              </tr>
+            </tbody>
+      </table>
+      </div>
+    </div>
+    <div class="col-sm-3">
+      <h3>Monster details</h3>        
+      <p class="line"></p>
+    </div>
+  </div>
+</div>
+<button onclick="testCase();">Test Case for Result</button>
+
+<header></header>
+<section></section>
+
+<script src="../test_site/libs/angular/angular.min.js" ></script >
+<script src="main.js" ></script >
+
+</body>
+</html>
