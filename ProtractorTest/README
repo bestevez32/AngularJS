@@ -1,0 +1,82 @@
+DETERMINE IF PROTRACTOR IS INSTALLED PROPERLY
+
+1. From Node.js command prompt 
+	npm install protractor -g
+	webdriver-manager update
+
+2. Download Java JDK
+	http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
+
+3. Run webdriver manager for Selenium Server in CMD
+	webdriver-manager start
+
+4. Run the example Protractor test in npm 
+	In CMD navigate to C:\Users\"LoggedInUser"\AppData\Roaming\npm\node_modules\protractor\example\protractor conf.js
+
+CONFIGURATION AND BASIC TEST
+
+1. Navigate to conf.js file
+	In IDE navigate to C:\Users\"LoggedInUser"\AppData\Roaming\npm\node_modules\protractor\example\protractor conf.js
+
+2. Configure the conf.js file
+	// An example configuration file.
+	exports.config = {
+	  seleniumAddress: 'http://localhost:4444/wd/hub',
+
+	  // Capabilities to be passed to the webdriver instance.
+	  capabilities: {
+	    'browserName': 'chrome'
+	  },
+
+	  // Framework to use. Jasmine is recommended.
+	  framework: 'jasmine',
+
+	  // Spec patterns are relative to the current working directory when
+	  // protractor is called.
+	  specs: ['zoo_spec.js'],
+
+	  // Options to be passed to Jasmine.
+	  jasmineNodeOpts: {
+	    showColors: true,
+	    defaultTimeoutInterval: 30000
+	  }
+	};
+
+3. Create the "test.js" file
+	Save a test file in C:\Users\"LoggedInUser"\AppData\Roaming\npm\node_modules\protractor\example\protractor "test.js"
+	Set up the test in the "test.js" file
+
+	describe ("text zoo site for input field on the home page", function(){
+		it ("to test input field and check text output", function(){
+
+
+		});
+		it ("to test input field and check text output", function(){
+			
+			
+		});
+		describe ("input field test", function(){
+			it ("happy values", function(){
+
+			});
+			it ("unhappy values", function(){
+
+			});
+
+		});
+
+	});
+
+4. Set up and run the "test.js"
+	describe ("text zoo site for input field on the home page", function(){
+	it ("to test input field and check text output", function(){
+		browser.get("http://www.thetestroom.com/jswebapp/");
+		element(by.model("person.name")).sendKeys("I will subscribe to this channel");
+		element(by.binding("person.name")).getText().then(function(text){
+			console.log(text);
+			});
+		});
+
+	});
+
+	Then run from CMD C:\Users\"LoggedInUser"\AppData\Roaming\npm\node_modules\protractor\example\protractor conf.js
